@@ -2,38 +2,41 @@
 
 /* ============= LAYOUT ======================================= */
 @supports (grid-area: auto){
-    .grid{
-        display: grid;
-        grid-gap: 1em; margin:1em;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 5rem repeat(3, max-content);
-        grid-template-areas:
-            "header header"
-            "intro before"
-            "examples examples"
-            "footer footer";
-    }
-
-    header{ grid-area: header}
-    .intro{ grid-area: intro}
-    .before{ grid-area: before}
-    .examples{ grid-area: examples}
-    footer{ grid-area: footer}
+    @media screen and (min-width: 50em) {
 
 
-    .example{
-        display: grid;
-        grid-gap: 1em;
-        grid-template-columns: 1fr 1fr;
-        margin-bottom: 2rem;
-    }
-    .example h2{grid-column:1/span 2}
-    .example .explanation{grid-column:1/2}
-    .example figure{grid-column:2/3}
-    .example div.codepen{grid-column:1/span 2}
-    .example h3{grid-column:1/span 2}
-    .example .extend{grid-column:1/2}
+        .grid{
+            display: grid;
+            grid-gap: 1em; margin:1em;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 5rem repeat(3, max-content);
+            grid-template-areas:
+                "header header"
+                "intro before"
+                "examples examples"
+                "footer footer";
+        }
 
+        header{ grid-area: header}
+        .intro{ grid-area: intro}
+        .before{ grid-area: before}
+        .examples{ grid-area: examples}
+        footer{ grid-area: footer}
+
+
+        .example{
+            display: grid;
+            grid-gap: 1em;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 2rem;
+        }
+        .example h2{grid-column:1/span 2}
+        .example .explanation{grid-column:1/2}
+        .example figure{grid-column:2/3}
+        .example div.codepen{grid-column:1/span 2}
+        .example h3{grid-column:1/span 2}
+        .example .extend{grid-column:1/2}
+    }/* end @media */
 } /* end @supports */
 
 
