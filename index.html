@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CSS Grid Basic Examples</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,22 +14,266 @@
 
         <section class="intro">
             <h2>Introduction</h2>
+            <p>This page is meant to show you some of the basic ways in which you can use CSS Grid. There are a lot of ways to size and position things using CSS Grid, which is great, but can be confusing. If you want a more thorough resource that covers all of the terminology, methods, units etc. then there are other resources. Perhaps start with <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">Mozilla Developer Network's guide</a>.</p>
+            <p>
+                To help you learn how to use the Grid and get a better sense of how it works I suggest clicking the <i>Edit in CodePen</i> link in the upper right corner of the code examples. This allows you to directly edit the CSS and HTML and see what happens when you do. Each example has an extended example that assumes you're doing this.
+            </p>
+
+            <p>One way to keep these examples handy is to have a CodePen account (see <b>Before You Start</b> for that). Follow this process for each example and you'll have your own versions:</p>
+            <ol>
+                <li>Sign in to Codepen</li>
+                <li>Click the <i>Edit in CodePen</i> link</li>
+                <li>Click to fork the project</li>
+                <li>Click to save.</li>
+            </ol>
         </section>
 
         <section class="before">
-            <h2>Before Your Start</h2>
+            <h2>Before You Start</h2>
+            <p>There are two things that will be helpful to have before you start using this page:</p>
+            <ol>
+                <li>A <b>CSS Grid Compatible Browser</b>. Right now (the latest versions) Chrome, Firefox, Safari and Opera as well as iOS Safari and the Android Browser all support it. Edge supports it from v16. See the <a href="http://caniuse.com/#feat=css-grid">Can I Use</a> page for up-to-date information.  </li>
+                <li>A <b>CodePen account</b>. You can either go to the site <a href="http://codepen.io">http://codepen.io</a> and sign up or you can sign in through your GitHub account. I recommend the GitHub account method and if you're in the web field and not on GitHub, then sign up: <a href="https://github.com">https://github.com</a>.</li>
+            </ol>
         </section>
 
         <div class="examples">
             <section class="example">
-                <h2></h2>
-                <div class="explanation"></div>
+                <h2>Example 1: Equal Columns</h2>
+                <div class="explanation">
+                    <p></p>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/3s1a0j1G2A3a/Image%202017-09-11%20at%203.32.09%20AM.png" alt="Image of two equal width columns each 1fr wide.">
+                    <figcaption>Fig 1: Image of two equal width columns each 1fr wide.</figcaption>
+                </figure>
+                <div class="codepen">
+                    <p data-height="265" data-theme-id="0" data-slug-hash="qPWBQX" data-default-tab="css,result" data-user="profstein" data-embed-version="2" data-pen-title="Basic CSS Grid: Equal Columns" class="codepen">See the Pen <a href="https://codepen.io/profstein/pen/qPWBQX/">Basic CSS Grid: Equal Columns</a> by Christopher Stein (<a href="https://codepen.io/profstein">@profstein</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                    <p><a href="https://codepen.io/profstein/pen/qPWBQX/">View the Full Example on CodePen</a></p>
+                </div>
+                <h3>Extend Example 1</h3>
+                <div class="extend">
+                    <p>Try extending this example by adding more columns.</p>
+                    <ul>
+                       <li>Click <b>Edit in CodePen</b>. Then click <b>Fork</b> and save if you want to keep a copy.</li>
+                        <li>Copy the second box: <br><img src="https://cl.ly/2t1r240P2u1r/Image%202017-09-11%20at%203.39.20%20AM.png" alt="Highlighted section element in the CodePen Editor"></li>
+                        <li><p>Paste in the box two or three more times. You can change "two" to keep track of how many section.box elements you have.</p>
+                        <p>As you paste them in CodePen you should notice that the new boxes keep the two column structure.</p></li>
+                        <li>In the CSS edit line 7 to add more <b>grid-template-columns</b>by adding <b><code>1fr</code></b> for each column.
+                        <p>If you match the columns and boxes they will spread equally across the page. <br>
+                        <img src="https://cl.ly/0e0r1j0o2n29/[9ab139e1ad75071a6209955451ec8947]_Image%202017-09-11%20at%203.46.26%20AM.png" alt="image showing html of fourth box on left and grid-template-column setting on right."></p>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <figure>
+                    <img src="https://cl.ly/3o101R102Z13/Image%202017-09-11%20at%203.54.31%20AM.png" alt="Image of four equal width columns each 1fr wide.">
+                    <figcaption>Fig 2: Image of four equal width columns each 1fr wide.</figcaption>
+                </figure>
+            </section>
+            <section class="example">
+                <h2>Example 2: Mixed Column Units</h2>
+                <div class="explanation">
+                    <p>You can mix and match different units for your column widths. You can also do that for rows as well. In this example the first column is a fractional unit, the second is set to 20em and the third at 75 pixels.The browser will set columns two and three first because they are fixed width and then assign the rest of the space to column one.</p>
+                    <p>Try clicking the CSS tab to show and hide it and you will see that columns two and three stay the same but column one grows and shrinks with the available space.</p>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/0E3I2A0k2q1Y/Image%202017-09-11%20at%202.45.37%20AM.png" alt="image of three column with widths set to 1fr, 20em, 75px">
+                    <figcaption>Fig 3: Image of three columns with widths set to 1fr, 20em, 75px.</figcaption>
+                </figure>
+                <div class="codepen">
+                    <p data-height="265" data-theme-id="0" data-slug-hash="wqVLjN" data-default-tab="css,result" data-user="profstein" data-embed-version="2" data-pen-title="Basic CSS Grid: Mixed Column Units" class="codepen">See the Pen <a href="https://codepen.io/profstein/pen/wqVLjN/">Basic CSS Grid: Mixed Column Units</a> by Christopher Stein (<a href="https://codepen.io/profstein">@profstein</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+                   <p><a href="https://codepen.io/profstein/pen/wqVLjN">View the Full Example on CodePen</a></p>
+                </div>
+                <h3>Extend Example 2</h3>
+                <div class="extend">
+                    <p>Try using different units for the column widths. Just change the values for grid-template-columns in line 7</p>
+                    <pre><code>grid-template-columns: 200px 500px 1fr;
+or
+grid-template-columns: 10rem auto 20rem;
+                    </code></pre>
+                    <p>or anything you want. <img src="https://cl.ly/3T0H3d27042f/Image%202017-09-11%20at%204.14.17%20AM.png" alt="modified grid-template-columns setting with 10% 500px 35rem"></p>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/1y3L3g0r2Q10/Image%202017-09-11%20at%204.14.11%20AM.png" alt="Three columns with widths of 10%, 500px and 35rem.">
+                    <figcaption>Fig 4: Three columns with widths of 10%, 500px and 35rem.</figcaption>
+                </figure>
+            </section>
+            <section class="example">
+                <h2>Example 3: Repeating Columns</h2>
+                <div class="explanation">
+                    <p>If you want to add a number of columns with the same settings then there is a handy repeat unit. This can also be used for rows.</p>
+                    <p>The format is as follows: <code>repeat(#-of-repeats, value-to-repeat);</code>. So if you wanted 12 columns all of equal width: <br> <code>grid-template-columns: repeat(12, 1fr);</code></p>
+                    <p></p>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/2P172v2x252F/Image%202017-09-11%20at%204.20.57%20AM.png" alt="Five columns of 1fr width each defined using repeat.">
+                    <figcaption>Fig 5: Five columns of 1fr width each defined using repeat.</figcaption>
+                </figure>
+                <div class="codepen">
+                    <p data-height="265" data-theme-id="0" data-slug-hash="GMKgYK" data-default-tab="css,result" data-user="profstein" data-embed-version="2" data-pen-title="Basic CSS Grid: Equal Columns through Repeat" class="codepen">See the Pen <a href="https://codepen.io/profstein/pen/GMKgYK/">Basic CSS Grid: Equal Columns</a> by Christopher Stein (<a href="https://codepen.io/profstein">@profstein</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                    <p><a href="https://codepen.io/profstein/pen/GMKgYK/">View the Full Example on CodePen</a></p>
+                </div>
+                <h3>Extend Example 3</h3>
+                <div class="extend">
+                    <p>You don't have to repeat for all of the columns. you can mix and match setting a column with repeat. In the example below the two property rules are the same:</p>
+                    <pre><code>
+grid-template-columns: 200px 1fr 1fr 1fr 1fr 200px;
+
+grid-template-columns: 200px repeat(4, 1fr) 200px;
+                    </code></pre>
+
+                    <p>You can also get super fancy and repeat a pattern. The following repeats a two column pattern (50px column then a 1fr column) 5 times so it defines 10 columns. See the figure to the right for an example of the output.</p>
+                    <pre><code>
+grid-template-columns: repeat(5, 50px 1fr);
+                    </code></pre>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/2P12062K1o0L/Image%202017-09-11%20at%204.45.48%20AM.png" alt="Image of 10 columns with the pattern of a 50px column followed by a 1fr wide column repeated 5 times.">
+                    <figcaption>Fig 6: Image of 10 columns with the pattern of a 50px column followed by a 1fr wide column repeated 5 times.</figcaption>
+                </figure>
+            </section>
+            <section class="example">
+                <h2>Example 4: Using Grid Lines to Span Multiple Columns</h2>
+                <div class="explanation">
+                    <p>So far we've only had each element cover one column. There are a number of different ways to tell the browser to strech an element over more than one column.</p>
+                    <p>When you add columns the browser will automatically add grid lines for those columns. Because the first line on the left is a grid line, there is always one more grid line than there are columns (the same is true for rows).</p>
+                    <p><img src="https://cl.ly/2Z260L3E3E1M/Screen%20Shot%202017-09-11%20at%205.02.11%20AM.png" alt="screenshot of items on a grid with grid lines showing."></p>
+                    <p>In the example above there are three columns and four grid lines (1, 2, 3, 4 going left to right). There are also two rows with three grid lines (1, 2, 3 going top to bottom).</p>
+                    <p>In order to force different elements to span different numbers of columns we will now have to add CSS for each individual element and define how many columns it spans.</p>
+                    <p>So we have given individual classes to each element this time in addition to the box class which is there for visuals.</p>
+                    <p>Here is an example of CSS that makes section.element1 span two columns starting at grid line 1 and ending at grid line 3.
+                    <img src="https://cl.ly/062N1J1c110K/Image%202017-09-11%20at%205.26.45%20AM.png" alt="Screenshot of CodePen editor with html on the left and CSS on the right."></p>
+                    <p>Instead of having to write the grid-column-start and grid-column-end properties each time, you can use the grid-column property and then write in the starting column, a slash (/), then the ending column:
+                    <img src="https://cl.ly/03050r002x1d/Image%202017-09-11%20at%205.29.59%20AM.png" alt="Screenshot of CodePen editor with html on the left and CSS on the right this time with grid-column shorthand."></p>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/3s3Q3G2G0S2j/Image%202017-09-11%20at%205.21.26%20AM.png" alt="Five elements, each with different column spans.">
+                    <figcaption>Fig. 7: Five elements, each with different column spans. If the elements take up all of the columns then the next element moves to a new row automatically.</figcaption>
+                </figure>
+                <div class="codepen">
+                    <p data-height="265" data-theme-id="0" data-slug-hash="wrwaQp" data-default-tab="css,result" data-user="profstein" data-embed-version="2" data-pen-title="Basic CSS Grid: Using Grid Lines" class="codepen">See the Pen <a href="https://codepen.io/profstein/pen/wrwaQp/">Basic CSS Grid: Using Grid Lines</a> by Christopher Stein (<a href="https://codepen.io/profstein">@profstein</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                    <p><a href="https://codepen.io/profstein/pen/wrwaQp/">View the Full Example on CodePen</a></p>
+                </div>
+                <h3>Extend Example 4</h3>
+                <div class="extend">
+                    <p>Try changing around the start and end grid lines for the elments to chane their sizes.</p>
+                    <p>Note that if you overlap them (start a second item in a column the previous item is in) then the overlapping item will move to the next row. This is because we haven't defined rows and they are made automatically. When you define the rows too you can layer elements on top of each other.</p>
+                    <p>See the Figure </p>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/0G0Y0D1g1e0U/Image%202017-09-11%20at%205.35.25%20AM.png" alt="Example of disjointed layout where elements are given overlapping starting or ending grid lines.">
+                    <figcaption>Fig. 8: Example of disjointed layout where elements are given overlapping starting or ending grid lines.</figcaption>
+                </figure>
+            </section>
+            <section class="example">
+                <h2>Example 5: Adding Rows for a Simple Site</h2>
+                <div class="explanation">
+                    <p>So far we've only defined columns. Now it's time to add some rows. Luckily this is relatively easy. You can add rows using the same syntax as adding columns except you use grid-template-rows: instead of grid-template-columns:</p>
+                    <p>We have also introduced a new unit: <code>max-content</code>. This tells the browser to make the row as high as the tallest piece of content in the row. A row defined this way will grow with its content.</p>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/2p2r441C100M/Image%202017-09-11%20at%205.46.06%20AM.png" alt="Simple site with header, article, sidebar and footer. This layout has two columns and three rows.">
+                    <figcaption>Fig. 9: Simple site with header, article, sidebar and footer. This layout has two columns and three rows.</figcaption>
+                </figure>
+                <div class="codepen">
+                    <p data-height="265" data-theme-id="0" data-slug-hash="jGNbao" data-default-tab="css,result" data-user="profstein" data-embed-version="2" data-pen-title="Basic CSS Grid: Simple Site with Rows and Columns" class="codepen">See the Pen <a href="https://codepen.io/profstein/pen/jGNbao/">Basic CSS Grid: Simple Site with Rows and Columns</a> by Christopher Stein (<a href="https://codepen.io/profstein">@profstein</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                    <p><a href="https://codepen.io/profstein/pen/jGNbao">View the Full Example on CodePen</a></p>
+                </div>
+                <h3>Extend Example 5</h3>
+                <div class="extend">
+                    <p>One way to extend this and see what happens is to add content to some of the elements. See what happens if you add a bunch more content to the header vs  the article element. Here you will see how max-content comes into play.</p>
+                    <p>As a side note adding content may produce some effects you're not expecting because flexbox is applied to the elements. If you want to see an element without flexbox then remove the .box class.</p>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/2I00370N1x3J/Image%202017-09-11%20at%205.51.15%20AM.png" alt="screencapture of the layout difference when content is added to header and article elements.">
+                    <figcaption>Fig. 10: screencapture of the layout difference when content is added to header and article elements.</figcaption>
+                </figure>
+            </section>
+            <section class="example">
+                <h2>Example 6: Grid Areas</h2>
+                <div class="explanation">
+                    <p>Using grid line numbers can get confusing. And if you change the number of columns then you will have to go back and redo everything.</p>
+                    <p>Luckily there is another way. You can create grid areas.Like most of CSS Grid it can take a couple of tries to get used to these, but once you do it's my opinion that they are the easiest, most readable way to lay out the major sections of your site.</p>
+                    <p>Template Areas are <b>MUCH</b> easier to use if you have sketched out the content areas of your site ahead of time and know how many rows and columns you have and what you are going to call the content areas covering those rows and columns.</p>
+                    <p>In the grid below we've defined two columns and three rows:</p>
+                    <pre><code>
+    display: grid;
+    grid-template-columns: 1fr 25em;
+    grid-template-rows: 5em max-content 10em;
+                    </code></pre>
+
+                    <p>Let's say we want our site to look something like this: <br>
+                    <img src="https://cl.ly/2X0k2M0Y2l04/Image%202017-09-11%20at%206.15.53%20AM.png" alt="">
+                    <br>
+                    In the first row the header spans both columns. In the second row the article is in the first column and the sidebar is in the second column. In the third row the footer spans both columns.
+                    </p>
+                    <p>To define the grid area we will  make one entry for each row. This is inside quote marks " " If you you don't put each row in quotes it doesn't work. </p>
+                    <pre><code>
+grid-template-areas:
+      "header header"
+      "article sidebar"
+      "footer footer";
+                    </code></pre>
+
+
+
+                    <p>It may help to draw over your wireframes to help you see where the grid area names are needed. See the yellow lines and text below. <br>
+                    <img src="https://cl.ly/1E160b1B2g38/[2d64d4ea7cb42d2d4ac4315cd0e36011]_Image%202017-09-11%20at%206.13.44%20AM.png" alt="annotated image of the grid areas with yellow lines to show rows and columns.">
+                    </p>
+
+                    <p>If you had six columns and wanted the header to span all six columns then you would write header six times like <br> <code>"header header header header header header"</code></p>
+
+                    <p>Now we can more easily put elements in thos grid areas we defined. Here we are using the classes of elements to associate them with an area:</p>
+                    <pre><code>
+  header{ grid-area: header; }
+  article{ grid-area: article; }
+  sidebar{ grid-area: sidebar; }
+  footer{ grid-area: footer; }
+                    </code></pre>
+                    <p>Notice that quotes are NOT used this time.</p>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/3a2m0X0G1U3W/Image%202017-09-11%20at%206.09.50%20AM.png" alt="">
+                    <figcaption></figcaption>
+                </figure>
+                <div class="codepen">
+                    <p data-height="265" data-theme-id="0" data-slug-hash="OjKKRK" data-default-tab="css,result" data-user="profstein" data-embed-version="2" data-pen-title="Basic CSS Grid: Template Areas" class="codepen">See the Pen <a href="https://codepen.io/profstein/pen/OjKKRK/">Basic CSS Grid: Template Areas</a> by Christopher Stein (<a href="https://codepen.io/profstein">@profstein</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                    <p><a href="https://codepen.io/profstein/pen/OjKKRK/">View the Full Example on CodePen</a></p>
+                </div>
+                <h3>Extend Example 6</h3>
+                <div class="extend">
+                    <p>One interesting trick to try is to move areas around on the grid. If you reverse <code>sidebar</code> and <code>article</code> in the grid-area definition then sidebar will show on the left and article on the right.</p>
+                    <p>You can also try adding in more elements and defining more grid areas to place them in, perhaps with more columns.</p>
+                </div>
+                <figure>
+                    <img src="https://cl.ly/3N0g3c0G1H40/Image%202017-09-11%20at%205.46.42%20AM.png" alt="the previous layout with sidebar and article element positioning swapped.">
+                    <figcaption>Fig. 12: the previous layout with sidebar and article element positioning swapped.</figcaption>
+                </figure>
+            </section>
+<!--
+            <section class="example">
+                <h2>Example 7: Changing the Display Order</h2>
+                <div class="explanation">
+
+                </div>
                 <figure>
                     <img src="" alt="">
                     <figcaption></figcaption>
                 </figure>
-                <div class="codepen"></div>
-                <h3></h3>
+                <div class="codepen">
+
+                    <p><a href="">View the Full Example on CodePen</a></p>
+                </div>
+                <h3>Extend Example 7</h3>
                 <div class="extend"></div>
                 <figure>
                     <img src="" alt="">
@@ -36,96 +281,42 @@
                 </figure>
             </section>
             <section class="example">
-                <h2></h2>
+                <h2>Example 8: Changing the Display Order with Grid Areas</h2>
                 <div class="explanation"></div>
                 <figure>
                     <img src="" alt="">
                     <figcaption></figcaption>
                 </figure>
-                <div class="codepen"></div>
-                <h3></h3>
+                <div class="codepen">
+
+                    <p><a href="">View the Full Example on CodePen</a></p>
+                </div>
+                <h3>Extend Example 8</h3>
                 <div class="extend"></div>
                 <figure>
                     <img src="" alt="">
                     <figcaption></figcaption>
                 </figure>
             </section>
-            <section class="example">
-                <h2></h2>
-                <div class="explanation"></div>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-                <div class="codepen"></div>
-                <h3></h3>
-                <div class="extend"></div>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-            </section>
-            <section class="example">
-                <h2></h2>
-                <div class="explanation"></div>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-                <div class="codepen"></div>
-                <h3></h3>
-                <div class="extend"></div>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-            </section>
-            <section class="example">
-                <h2></h2>
-                <div class="explanation"></div>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-                <div class="codepen"></div>
-                <h3></h3>
-                <div class="extend"></div>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-            </section>
-            <section class="example">
-                <h2></h2>
-                <div class="explanation"></div>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-                <div class="codepen"></div>
-                <h3></h3>
-                <div class="extend"></div>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-            </section>
-            <section class="example">
-                <h2></h2>
-                <div class="explanation"></div>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-                <div class="codepen"></div>
-                <h3></h3>
-                <div class="extend"></div>
-                <figure>
-                    <img src="" alt="">
-                    <figcaption></figcaption>
-                </figure>
-            </section>
+-->
         </div>
+
+        <footer>
+            <div class="resources">
+                <h3>More CSS Grid Resources</h3>
+                <ul>
+                    <li>Rachel Andrew&rsquo;s <strong>Grid By Example</strong> website: <a href="https://gridbyexample.com">https://gridbyexample.com</a>. That site includes <a href="https://gridbyexample.com/examples">examples</a>, <a href="https://gridbyexample.com/patterns">patterns</a>, <a href="https://gridbyexample.com/video/">video tutorials</a> and <a href="https://gridbyexample.com/resources">resources</a>.</li>
+                    <li>Jen Simmons&rsquo; experimental <strong>layout lab</strong>: <a href="http://labs.jensimmons.com/">http://labs.jensimmons.com/</a></li>
+                    <li>Use <strong>CSS Grid Inspector</strong> tool built into the latest version of Firefox. More info <a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Examine_grid_layouts">here</a>. Even better use the enhanced CSS Grid Inspector in the Developer Edition of Firefox. Download that for free here: <a href="https://www.mozilla.org/en-US/firefox/developer/">https://www.mozilla.org/en-US/firefox/developer/</a></li>
+                    <li>Try the <strong>CSS Playground</strong>: <a href="http://labs.jensimmons.com/">http://labs.jensimmons.com/</a></li>
+                </ul>
+            </div>
+
+            <div class="about">
+                <h3>About this Page</h3>
+                <p>This page was created by Chris Stein for a class on Web Design. While it was created in the context of a class, it is also designed to be a stand along resource.</p>
+            </div>
+        </footer>
     </main>
 </body>
 </html>
