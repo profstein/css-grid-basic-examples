@@ -132,3 +132,6 @@ footer a{
 footer a:visited{
     color: #3CB371;
 }
+footer li li{
+    margin-bottom:.5em;
+}
