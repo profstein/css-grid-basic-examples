@@ -46,7 +46,46 @@
             <section class="example">
                 <h2>Example 1: Equal Columns</h2>
                 <div class="explanation">
-                    <p></p>
+                    <p>
+                        This is a simple but powerful part of CSS Grid. In float-based layouts you have to use percentages to spread columns across the page. For example if you wanted four columns to share the page you would have to set the width of each to 25%:
+                        <br><code>width: 25%;</code>
+                    </p>
+                    <p>
+                        Then if you decided you wanted five columns you would have to go to all of the elements and change their width to <code>width: 20%;</code>.
+                    </p>
+                    <p>
+                        Some numbers like 3 columns didn't quite fit percent (33.33333%).
+                    </p>
+
+                    <p>CSS Grid is different in a few ways. The first big difference is that you specify the width of columns, not individually on each element. Below is an example of making four equal columns using the percent.</p>
+                    <pre><code>
+.grid-container{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+                    </code></pre>
+
+                   <p>
+                       If you want to add another column then you would just add another number to the grid-template-columns. <code>grid-template-columns: 20% 20% 20% 20% 20%;</code>
+                   </p>
+
+
+                    <p>With CSS Grid we also now have another big change, the fractional unit: fr. This makes adding columns even easier and the math involved is simpler. Here is a four column layout</p>
+
+                    <pre><code>
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+                    </code></pre>
+                    <p>
+                        To change it to five columns you just add a fifth one to the end <br><code>grid-template-columns: 1fr 1fr 1fr 1fr <b>1fr</b></code>
+                    </p>
+                    <p>Fr works by adding all of the fractional units together and diviing the available space among them.</p>
+
+                    <p>
+                        Try the example below. Remember that if you add more columns in the CSS you will also have to add more elements in the grid (See Extends Example 1 below).
+                    </p>
                 </div>
                 <figure>
                     <img src="https://cl.ly/3s1a0j1G2A3a/Image%202017-09-11%20at%203.32.09%20AM.png" alt="Image of two equal width columns each 1fr wide.">
